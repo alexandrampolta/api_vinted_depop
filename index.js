@@ -122,6 +122,8 @@ function depoponly(cursor,count,q){
 
 function vintpop(){
 //still in work
+    res.json({error:"missing platform param"})
+
 }
 
 })
@@ -183,14 +185,14 @@ fetch("https://webapi.depop.com/api/v2/product/"+item+"/?lang=en", {
 });
 
 
-app.get("/status", function (req, res) {
+app.get("/", function (req, res) {
 
     res.send({code:200});
 });
 
 app.get('*', function(req, res){
 
-    res.send({code:404})
+    res.send({code:404,example:"/search?q=nike&platform=vinted"})
    
    });
    app.post('*', function(req, res){
