@@ -37,14 +37,11 @@ console.log("updated token");
 
 
 
-cron.schedule('*/5 * * * *', () => {
+cron.schedule('*/5 * * * *', () => { //this task made to get the token every 5 minutes , but this will only work on a running server like aws not sure if lmbda can handle it too
   // Run task here
   // This function will be called every 5 minutes
  //getting the token and cookies or vinted.co.uk
- fetch('https://ntfy.sh/testers', {
-    method: 'POST',
-    body: 'Updating the cookies_vinted',
-  })
+
 
  fetch("https://www.vinted.co.uk/", {
     "body": null,
