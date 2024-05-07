@@ -104,7 +104,23 @@ function vintedonly(page,count,q){
 function depoponly(cursor,count,q){
 
     fetch("https://webapi.depop.com/api/v2/search/products/?what="+q+"&itemsPerPage="+count+"&country=gb&currency=GBP&cursor="+cursor, {
-      
+       headers : {
+    'accept': 'application/json, text/plain, /',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'no-cache',
+    'depop-session-id': '',
+    'origin': 'https://www.depop.com',
+    'pragma': 'no-cache',
+    'priority': 'u=1, i',
+    'referer': 'https://www.depop.com/',
+    'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-site',
+    'user-agent': 'Mozilla/5.0 (compatible; MSIE 10.6; Windows NT 6.1; Trident/5.0; InfoPath.2; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 2.0.50727) 3gpp-gba UNTRUSTED/1.0',
+   },
         "body": null,
         "method": "GET"
       }) .then(response => response.json()).then(data => {
@@ -159,7 +175,23 @@ if(platform=="vinted"){
 }else if(platform=="depop"){
 
 fetch("https://webapi.depop.com/api/v2/product/"+item+"/?lang=en", {
-      
+       headers : {
+    'accept': 'application/json, text/plain, /',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'no-cache',
+    'depop-session-id': '',
+    'origin': 'https://www.depop.com',
+    'pragma': 'no-cache',
+    'priority': 'u=1, i',
+    'referer': 'https://www.depop.com/',
+    'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-site',
+    'user-agent': 'Mozilla/5.0 (compatible; MSIE 10.6; Windows NT 6.1; Trident/5.0; InfoPath.2; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 2.0.50727) 3gpp-gba UNTRUSTED/1.0',
+   },
 "body": null,
 "method": "GET"
 }) .then(response => response.json()).then(data => {
