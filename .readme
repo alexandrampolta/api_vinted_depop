@@ -1,0 +1,22 @@
+Depop has changed it's security , accessing thier API directly from out of a real browser is impossible  due a generated browser Etag .
+
+you can skip thier new security barriers by adding this headers into all depop fetch requests in index.js , includes a old user agent from my choice which makes  this 403 errors fixed in most secured sites .
+//please don't change it if not necessary newest user-agent might not work with it.
+
+ headers : {
+    'accept': 'application/json, text/plain, /',
+    'accept-language': 'en-US,en;q=0.9',
+    'cache-control': 'no-cache',
+    'depop-session-id': '',
+    'origin': 'https://www.depop.com',
+    'pragma': 'no-cache',
+    'priority': 'u=1, i',
+    'referer': 'https://www.depop.com/',
+    'sec-ch-ua': '"Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"',
+    'sec-ch-ua-mobile': '?0',
+    'sec-ch-ua-platform': '"Windows"',
+    'sec-fetch-dest': 'empty',
+    'sec-fetch-mode': 'cors',
+    'sec-fetch-site': 'same-site',
+    'user-agent': 'Mozilla/5.0 (compatible; MSIE 10.6; Windows NT 6.1; Trident/5.0; InfoPath.2; SLCC1; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; .NET CLR 2.0.50727) 3gpp-gba UNTRUSTED/1.0',
+   },
